@@ -3,6 +3,12 @@ import plugin from './index.js'
 export default [
   {
     files: ['**/*.js'],
+    languageOptions: {
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+      },
+    },
     plugins: {
       'require-js-extension': plugin,
     },
