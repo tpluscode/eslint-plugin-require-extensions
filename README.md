@@ -20,11 +20,11 @@ import eslintPluginRequireJsExtension from 'eslint-plugin-require-js-extension'
 export default [
   {
     plugins: {
-      'require-extensions': eslintPluginRequireJsExtension,
+      'require-js-extension': eslintPluginRequireJsExtension,
     },
     rules: {
-      'require-extensions/require-extensions': 'error',
-      'require-extensions/require-index': 'error',
+      'require-js-extension/require-js-extension': 'error',
+      'require-js-extension/require-index': 'error',
     },
   },
 ]
@@ -38,7 +38,7 @@ import eslintPluginRequireJsExtension from 'eslint-plugin-require-js-extension'
 export default [
   {
     plugins: {
-      'require-extensions': eslintPluginRequireJsExtension,
+      'require-js-extension': eslintPluginRequireJsExtension,
     },
     extends: ['eslintPluginRequireJsExtension/recommended'],
   },
@@ -61,7 +61,7 @@ eslint .
 
 ```
 source.js
-  1:1  error  Relative imports and exports must end with .js  require-extensions/require-extensions
+  1:1  error  Relative imports and exports must end with .js  require-js-extension/require-js-extension
 ```
 
 5. Fix

@@ -11,7 +11,7 @@ const plugin = {
     version: '0.1.3',
   },
   rules: {
-    'require-extensions': rule((context, node, path) => {
+    'require-js-extension': rule((context, node, path) => {
       if (!existsSync(path)) {
         let fix
         if (!node.source.value.includes('?')) {
@@ -46,11 +46,11 @@ const plugin = {
 Object.assign(plugin.configs, {
   recommended: {
     plugins: {
-      'require-extensions': plugin,
+      'require-js-extension': plugin,
     },
     rules: {
-      'require-extensions/require-extensions': 'error',
-      'require-extensions/require-index': 'error',
+      'require-js-extension/require-js-extension': 'error',
+      'require-js-extension/require-index': 'error',
     },
   },
 })

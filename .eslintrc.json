@@ -1,6 +1,6 @@
 {
-  "extends": ["plugin:require-extensions/recommended"],
-  "plugins": ["require-extensions"],
+  "extends": ["plugin:require-js-extension/recommended"],
+  "plugins": ["require-js-extension"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2020

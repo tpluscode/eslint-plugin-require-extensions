@@ -14,9 +14,9 @@ const ruleTester = new RuleTester({
   },
 })
 
-console.log('Testing require-extensions rule...\n')
+console.log('Testing require-js-extension rule...\n')
 
-ruleTester.run('require-extensions', plugin.rules['require-extensions'], {
+ruleTester.run('require-js-extension', plugin.rules['require-js-extension'], {
   valid: [
     // Imports with .js extension (files exist in example dir)
     {
@@ -70,7 +70,7 @@ ruleTester.run('require-extensions', plugin.rules['require-extensions'], {
   ],
 })
 
-console.log('✓ require-extensions tests passed\n')
+console.log('✓ require-js-extension tests passed\n')
 
 console.log('Testing require-index rule...\n')
 
