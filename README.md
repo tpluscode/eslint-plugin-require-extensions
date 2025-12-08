@@ -4,7 +4,7 @@ TypeScript [doesn't transform extensions](https://github.com/microsoft/TypeScrip
 
 This is a simple eslint plugin that ensures that relative imports _and_ exports have `.js` extensions.
 
-Credit for [the original implementation](https://github.com/solana-labs/wallet-adapter/pull/547) goes to [johnrees](https://github.com/johnrees). ❤️
+Credit for [the original implementation](https://github.com/anza-xyz/eslint-plugin-require-extensions) goes to [anza-xyz](https://github.com/anza-xyz). ❤️
 
 1. Install
 
