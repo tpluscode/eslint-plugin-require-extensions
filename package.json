@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-require-js-extension",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Jeremy Tenjo",
   "repository": "https://github.com/jeremytenjo/eslint-plugin-require-js-extension",
   "license": "Apache-2.0",
