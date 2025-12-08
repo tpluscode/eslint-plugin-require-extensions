@@ -1,10 +1,13 @@
-import { existsSync, lstatSync } from 'fs'
+import { existsSync, lstatSync, readFileSync } from 'fs'
 import { dirname, resolve } from 'path'
+
+const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))
 
 const plugin = {
   meta: {
-    name: 'eslint-plugin-require-js-extension',
-    version: '0.1.3',
+    name: pkg.name,
+    version: pkg.version,
+    namespace: 'require-js-extension',
   },
   rules: {
     'require-js-extension': rule((context, node, path) => {
