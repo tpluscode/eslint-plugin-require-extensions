@@ -7,7 +7,7 @@
   "type": "module",
   "main": "./index.js",
   "exports": {
-    "require": "./index.js"
+    ".": "./index.js"
   },
   "files": [
     "index.js",
