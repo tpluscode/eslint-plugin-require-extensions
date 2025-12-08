@@ -15,12 +15,12 @@ npm install --save-dev eslint-plugin-require-js-extension
 2. Create `eslint.config.js`
 
 ```javascript
-import example from 'eslint-plugin-require-js-extension'
+import eslintPluginRequireJsExtension from 'eslint-plugin-require-js-extension'
 
 export default [
   {
     plugins: {
-      'require-extensions': example,
+      'require-extensions': eslintPluginRequireJsExtension,
     },
     rules: {
       'require-extensions/require-extensions': 'error',
@@ -33,14 +33,14 @@ export default [
 Alternatively, use the recommended config:
 
 ```javascript
-import example from 'eslint-plugin-require-js-extension'
+import eslintPluginRequireJsExtension from 'eslint-plugin-require-js-extension'
 
 export default [
   {
     plugins: {
-      'require-extensions': example,
+      'require-extensions': eslintPluginRequireJsExtension,
     },
-    extends: ['example/recommended'],
+    extends: ['eslintPluginRequireJsExtension/recommended'],
   },
 ]
 ```
