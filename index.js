@@ -7,7 +7,7 @@ const __dirname = dirname(__filename)
 
 const plugin = {
   meta: {
-    name: 'eslint-plugin-require-extensions',
+    name: 'eslint-plugin-require-js-extension',
     version: '0.1.3',
   },
   rules: {

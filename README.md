@@ -1,4 +1,4 @@
-# eslint-plugin-require-extensions
+# eslint-plugin-require-js-extension
 
 TypeScript [doesn't transform extensions](https://github.com/microsoft/TypeScript/issues/16577) and [doesn't enforce file extensions](https://github.com/microsoft/TypeScript/issues/42813).
 
@@ -7,46 +7,50 @@ This is a simple eslint plugin that ensures that relative imports _and_ exports 
 Credit for [the original implementation](https://github.com/solana-labs/wallet-adapter/pull/547) goes to [johnrees](https://github.com/johnrees). ❤️
 
 1. Install
+
 ```shell
-npm install --save-dev eslint-plugin-require-extensions
+npm install --save-dev eslint-plugin-require-js-extension
 ```
 
 2. Create `eslint.config.js`
+
 ```javascript
-import example from 'eslint-plugin-require-extensions';
+import example from 'eslint-plugin-require-js-extension'
 
 export default [
-    {
-        plugins: {
-            'require-extensions': example,
-        },
-        rules: {
-            'require-extensions/require-extensions': 'error',
-            'require-extensions/require-index': 'error',
-        },
+  {
+    plugins: {
+      'require-extensions': example,
     },
-];
+    rules: {
+      'require-extensions/require-extensions': 'error',
+      'require-extensions/require-index': 'error',
+    },
+  },
+]
 ```
 
 Alternatively, use the recommended config:
+
 ```javascript
-import example from 'eslint-plugin-require-extensions';
+import example from 'eslint-plugin-require-js-extension'
 
 export default [
-    {
-        plugins: {
-            'require-extensions': example,
-        },
-        extends: ['example/recommended'],
+  {
+    plugins: {
+      'require-extensions': example,
     },
-];
+    extends: ['example/recommended'],
+  },
+]
 ```
 
 3. Code
+
 ```js
 // source.js
 
-import Target from './target';
+import Target from './target'
 ```
 
 4. Lint
@@ -54,6 +58,7 @@ import Target from './target';
 ```shell
 eslint .
 ```
+
 ```
 source.js
   1:1  error  Relative imports and exports must end with .js  require-extensions/require-extensions
@@ -64,8 +69,9 @@ source.js
 ```shell
 eslint --fix .
 ```
+
 ```js
 // source.js
 
-import Target from './target.js';
+import Target from './target.js'
 ```
