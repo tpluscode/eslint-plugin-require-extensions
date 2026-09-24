@@ -11,16 +11,13 @@ Credit for [the original implementation](https://github.com/solana-labs/wallet-a
 npm install --save-dev eslint-plugin-require-extensions
 ```
 
-2. Edit `.eslintrc`
-```json
-{
-    "extends": [
-        "plugin:require-extensions/recommended"
-    ],
-    "plugins": [
-        "require-extensions"
-    ]
-}
+2. Edit `eslint.config.js`
+```js
+import requireExtensions from 'eslint-plugin-require-extensions';
+
+export default [
+    requireExtensions.configs.recommended,
+];
 ```
 
 3. Code

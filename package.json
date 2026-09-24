@@ -4,34 +4,32 @@
     "author": "Solana Maintainers <maintainers@solana.foundation>",
     "repository": "https://github.com/solana-labs/eslint-plugin-require-extensions",
     "license": "Apache-2.0",
-    "type": "commonjs",
+    "type": "module",
     "scripts": {
+        "fmt": "prettier --write '{*,**/*}.{ts,tsx,js,jsx,json}'",
         "test": "eslint . --report-unused-disable-directives"
     },
     "engines": {
-        "node": ">=16"
+        "node": ">=18.18.0"
     },
     "main": "./index.js",
     "exports": {
-        "require": "./index.js"
+        ".": "./index.js",
+        "./package.json": "./package.json"
     },
     "files": [
         "index.js",
         "LICENSE",
         "README.md"
     ],
-    "scripts": {
-        "fmt": "prettier --write '{*,**/*}.{ts,tsx,js,jsx,json}'",
-        "test": "eslint . --report-unused-disable-directives"
-    },
     "publishConfig": {
         "access": "public"
     },
     "peerDependencies": {
-        "eslint": "*"
+        "eslint": ">=9"
     },
     "devDependencies": {
-        "eslint": "^8.23.0",
+        "eslint": "^9.39.5",
         "prettier": "^2.8.6"
     }
 }

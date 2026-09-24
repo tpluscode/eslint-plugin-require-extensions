@@ -1,15 +1,12 @@
-const { existsSync, lstatSync } = require('fs');
-const { dirname, resolve } = require('path');
+import { existsSync, lstatSync, readFileSync } from 'fs';
+import { dirname, resolve } from 'path';
 
-module.exports = {
-    configs: {
-        recommended: {
-            plugins: ['require-extensions'],
-            rules: {
-                'require-extensions/require-extensions': 'error',
-                'require-extensions/require-index': 'error',
-            },
-        },
+const { name, version } = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'));
+
+const plugin = {
+    meta: {
+        name,
+        version,
     },
     rules: {
         'require-extensions': rule((context, node, path) => {
@@ -42,6 +39,21 @@ module.exports = {
     },
 };
 
+plugin.configs = {
+    recommended: {
+        plugins: {
+            'require-extensions': plugin,
+        },
+        rules: {
+            'require-extensions/require-extensions': 'error',
+            'require-extensions/require-index': 'error',
+        },
+    },
+};
+
+export const { meta, rules, configs } = plugin;
+export default plugin;
+
 function rule(check) {
     return {
         meta: {
@@ -54,7 +66,7 @@ function rule(check) {
                 const value = source.value.replace(/\?.*$/, '');
                 if (!value || !value.startsWith('.') || value.endsWith('.js')) return;
 
-                check(context, node, resolve(dirname(context.getFilename()), value));
+                check(context, node, resolve(dirname(context.filename), value));
             }
 
             return {
